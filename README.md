@@ -1,4 +1,7 @@
-# JIDM_v2 - Machine Learning Model Project
+# ModularMind - Machine Learning Model Project
+
+## Thesis
+ModularMind explores whether structured modular specialization and orchestration can increase reasoning depth without requiring massive scale.
 
 ## Overview
 This project implements a machine learning model with custom training pipeline and tokenization.
