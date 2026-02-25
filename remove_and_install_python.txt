@@ -1,0 +1,12 @@
+Remove-Item -Path .venv -Recurse -Force
+
+python -m venv .venv
+
+.venv\Scripts\Activate.ps1; python -m pip install --upgrade pip
+
+
+.venv\Scripts\Activate.ps1; pip install -r requirements.txt
+
+#PYTHON 3.9.9 PATH C:\Users\SHOP__FLOOR_PC\AppData\Local\Programs\Python\Python39
+
+

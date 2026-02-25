@@ -1,0 +1,8 @@
+
+├─ configs/
+│  └─ train.yaml
+├─ model.py
+├─ dataset.py
+├─ trainer.py
+├─ train.py
+└─ tokenizer/   # your existing BPE

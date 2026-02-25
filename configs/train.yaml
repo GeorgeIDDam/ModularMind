@@ -1,0 +1,41 @@
+model:
+  vocab_size: 20000
+  n_positions: 1024
+  n_embd: 512
+  n_head: 8
+  n_layer: 6
+  n_inner: 2048
+  pre_norm: true
+  norm_type: rmsnorm
+  rotary_emb_base: 10000
+  flash_attention: true
+
+training:
+  batch_size: 16
+  gradient_accumulation: 8        # effective batch = 128
+  max_steps: 400000
+  epoch_based: true
+  steps_per_epoch: 183            # derived, not guessed
+  epochs: 200 
+  device: cuda                    # YES, 200 epochs
+
+  # optimizer
+  learning_rate: 5.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+
+  # scheduler
+  scheduler: cosine
+  warmup_steps: 1000
+  min_lr: 5.0e-5
+
+  log_interval: 50
+  save_interval: 10        # every 10 epochs
+  eval_interval: 5         # every 5 epochs
+
+data:
+  chunk_dir: data/preprocessed/
+  num_chunks: 24 
+  block_size: 1024
+  pad_token_id: 0
+  shuffle_chunks_each_epoch: true
